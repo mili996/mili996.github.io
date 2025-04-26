@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>媚春阁发布页 - 获取最新域名和访问地址</title>
-    <meta name="description" content="媚春阁发布页，提供最新的域名和访问地址，确保用户能够及时找到最新的入口。">
-    <meta name="keywords" content="媚春阁, 媚春阁最新域名, 媚春阁发布页, 媚春阁最新地址">
+    <title>咪哩视频发布页 - 获取最新域名和访问地址</title>
+    <meta name="description" content="咪哩视频发布页，提供最新的域名和访问地址，确保用户能够及时找到最新的入口。">
+    <meta name="keywords" content="咪哩视频, 咪哩视频最新域名, 咪哩视频发布页, 咪哩视频最新地址">
     <meta name="robots" content="index, follow">
     <style>
         body {
@@ -111,11 +111,10 @@
     </script>
     
     <script>
-        const domains = ["meichunge2道姑top", "meichunge3道姑top", "meichunge4道姑top", "meichunge5道姑top"];
-        const subdomains = ["HongKongDoll", "guochan", "riben"];
+        const domains = ["mili3成都top", "mili4成都top", "mili5成都top"];
+        const subdomains = ["mm", "mm", "mm"];
         const noRedirectMap = {
-            "seying3道姑top": ["douyin"],
-            "seying4道姑top": ["zipai", "luoli"],
+        
         };
         function getRandomSubdomain(domain) {
             let randomSubdomain;
@@ -126,7 +125,7 @@
         }
         function randomRedirect(domain) {
             const randomSubdomain = getRandomSubdomain(domain);
-            const newUrl = `https://${randomSubdomain}.${domain.replace('道姑', '.')}`;
+            const newUrl = `https://${randomSubdomain}.${domain.replace('成都', '.')}`;
             window.location.href = newUrl;
         }
         function displayDomainList() {
@@ -134,12 +133,12 @@
 
             domains.forEach((domain, index) => {
                 const randomSubdomain = getRandomSubdomain(domain);
-                const displayDomain = `https://${randomSubdomain}.${domain.replace('道姑', '.')}`;
+                const displayDomain = `https://${randomSubdomain}.${domain.replace('成都', '.')}`;
                 const domainDiv = document.createElement('div');
                 domainDiv.classList.add('domain-container');
 
                 const welcomeText = document.createElement('div');
-                welcomeText.textContent = `媚春阁地址 ${index + 1}`;
+                welcomeText.textContent = `咪哩视频地址 ${index + 1}`;
                 welcomeText.classList.add('welcome');
 
                 const domainText = document.createElement('div');
@@ -167,28 +166,16 @@
             setTimeout(() => {
                 const randomDomain = domains[Math.floor(Math.random() * domains.length)];
                 randomRedirect(randomDomain);
-            }, 3000);
+            }, 5000);
         });
     </script>
 </head>
 <body>
-    <script>
-        var _paq = window._paq = window._paq || [];
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-            var u="//matomo.zbka.xyz/";
-            _paq.push(['setTrackerUrl', u+'matomo.php']);
-            _paq.push(['setSiteId', '11']);
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
-        })();
-    </script>
 
     <div class="header-container">
         <h1>正在跳转到最新可用地址</h1>
     </div>
     <div class="domain-list-wrapper" id="domainList"></div>
-    <div class="copyright">© 2024 媚春阁 All Rights Reserved.</div>
+    <div class="copyright">© 2024 咪哩视频 All Rights Reserved.</div>
 </body>
 </html>
