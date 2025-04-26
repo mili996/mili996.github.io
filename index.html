@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>媚春阁发布页 - 获取最新域名和访问地址</title>
+    <meta name="description" content="媚春阁发布页，提供最新的域名和访问地址，确保用户能够及时找到最新的入口。">
+    <meta name="keywords" content="媚春阁, 媚春阁最新域名, 媚春阁发布页, 媚春阁最新地址">
+    <meta name="robots" content="index, follow">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #2c2c2c, #595959);
+            color: #d3d3d3;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        .header-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 32px;
+            color: #e0e0e0;
+            margin-bottom: 40px;
+        }
+        .domain-list-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            width: 90%;
+        }
+        .domain-container {
+            background-color: #3a3a3a;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .domain-container:hover {
+            transform: translateY(-5px);
+            background-color: #4a4a4a;
+        }
+        .welcome {
+            font-size: 20px;
+            color: #cccccc;
+            margin-bottom: 10px;
+        }
+        .domain {
+            font-size: 18px;
+            color: #ffae42;
+            cursor: pointer;
+            margin-bottom: 10px;
+        }
+        .disclaimer {
+            font-size: 14px;
+            color: #888888;
+        }
+        .copyright {
+            margin-top: 20px;
+            color: #aaaaaa;
+            font-size: 12px;
+        }
+    </style>
+    
+    <script>
+        function blockDeveloperTools() {
+            // 禁止右键菜单
+            document.addEventListener('contextmenu', function(event) {
+                event.preventDefault();
+            });
+
+            // 禁止按键
+            document.addEventListener('keydown', function(event) {
+                if (event.keyCode === 123 || 
+                    (event.ctrlKey && event.shiftKey && event.keyCode === 73) || 
+                    (event.ctrlKey && event.shiftKey && event.keyCode === 74) || 
+                    (event.ctrlKey && event.keyCode === 85)) {
+                    event.preventDefault();
+                    window.location.href = "about:blank";
+                }
+            });
+
+            // 检测控制台打开
+            var checkStatus;
+            (function checkDevTools() {
+                checkStatus = false;
+                var element = new Image();
+                Object.defineProperty(element, 'id', {
+                    get: function() {
+                        checkStatus = true;
+                        throw new Error('检测到控制台');
+                    }
+                });
+                console.log(element);
+                console.clear();
+                if (checkStatus) {
+                    window.location.href = "about:blank";
+                }
+                setTimeout(checkDevTools, 1000);
+            })();
+        }
+
+        blockDeveloperTools();
+    </script>
+    
+    <script>
+        const domains = ["meichunge2道姑top", "meichunge3道姑top", "meichunge4道姑top", "meichunge5道姑top"];
+        const subdomains = ["HongKongDoll", "guochan", "riben"];
+        const noRedirectMap = {
+            "seying3道姑top": ["douyin"],
+            "seying4道姑top": ["zipai", "luoli"],
+        };
+        function getRandomSubdomain(domain) {
+            let randomSubdomain;
+            do {
+                randomSubdomain = subdomains[Math.floor(Math.random() * subdomains.length)];
+            } while (noRedirectMap[domain] && noRedirectMap[domain].includes(randomSubdomain));
+            return randomSubdomain;
+        }
+        function randomRedirect(domain) {
+            const randomSubdomain = getRandomSubdomain(domain);
+            const newUrl = `https://${randomSubdomain}.${domain.replace('道姑', '.')}`;
+            window.location.href = newUrl;
+        }
+        function displayDomainList() {
+            const domainListContainer = document.getElementById('domainList');
+
+            domains.forEach((domain, index) => {
+                const randomSubdomain = getRandomSubdomain(domain);
+                const displayDomain = `https://${randomSubdomain}.${domain.replace('道姑', '.')}`;
+                const domainDiv = document.createElement('div');
+                domainDiv.classList.add('domain-container');
+
+                const welcomeText = document.createElement('div');
+                welcomeText.textContent = `媚春阁地址 ${index + 1}`;
+                welcomeText.classList.add('welcome');
+
+                const domainText = document.createElement('div');
+                domainText.textContent = displayDomain;
+                domainText.classList.add('domain');
+
+                domainText.addEventListener('click', () => {
+                    window.location.href = displayDomain;
+                });
+
+                const disclaimerText = document.createElement('div');
+                disclaimerText.textContent = '未满18请自觉离开，请勿使用国产浏览器访问。';
+                disclaimerText.classList.add('disclaimer');
+
+                domainDiv.appendChild(welcomeText);
+                domainDiv.appendChild(domainText);
+                domainDiv.appendChild(disclaimerText);
+
+                domainListContainer.appendChild(domainDiv);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            displayDomainList();
+            setTimeout(() => {
+                const randomDomain = domains[Math.floor(Math.random() * domains.length)];
+                randomRedirect(randomDomain);
+            }, 3000);
+        });
+    </script>
+</head>
+<body>
+    <script>
+        var _paq = window._paq = window._paq || [];
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+            var u="//matomo.zbka.xyz/";
+            _paq.push(['setTrackerUrl', u+'matomo.php']);
+            _paq.push(['setSiteId', '11']);
+            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+            g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+        })();
+    </script>
+
+    <div class="header-container">
+        <h1>正在跳转到最新可用地址</h1>
+    </div>
+    <div class="domain-list-wrapper" id="domainList"></div>
+    <div class="copyright">© 2024 媚春阁 All Rights Reserved.</div>
+</body>
+</html>
